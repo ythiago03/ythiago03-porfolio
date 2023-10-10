@@ -1,0 +1,30 @@
+.sidebar{
+  position: absolute;
+  right: 0;
+  top: 92px;
+  margin-right: 2rem;
+  width: 93px ;
+  min-height: 80vh ;
+  border: 1px solid var(--lightPurple);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar span{
+  transform: rotate(90deg);
+  color: var(--white);
+  font-size: 1.5rem;
+  width: 150px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
