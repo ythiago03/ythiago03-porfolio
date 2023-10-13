@@ -20,7 +20,7 @@
   margin-bottom: 1rem;
 }
 
-.sidebar span{
+.sidebar > span{
   transform: rotate(90deg);
   color: var(--white);
   font-size: 1.5rem;
@@ -28,3 +28,4 @@
   text-transform: uppercase;
   font-weight: 400;
 }
+

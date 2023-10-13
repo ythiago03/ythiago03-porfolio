@@ -1,0 +1,22 @@
+.iconButton{
+  border-radius: 5px;
+  border: none;
+  background-color: var(--lightPurple);
+}
+
+.iconButton a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+}
+
+.iconText{
+  background-color: var(--lightPurple);
+  overflow-x: hidden;
+  transition: 300ms ease-out;
+  margin: 1px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+

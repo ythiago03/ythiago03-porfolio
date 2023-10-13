@@ -33,3 +33,17 @@ a{
   color: var(--purple);
   font-weight: 700;
 }
+
+::-webkit-scrollbar{
+  background-color: var(--black);
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--purple);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--lightPurple);
+}

@@ -14,6 +14,10 @@
   padding-left: 2.5rem;
 }
 
+.navbar ul li{
+  cursor: pointer;
+}
+
 .icon{
   height: 100%;
   width: 92px;

@@ -231,6 +231,7 @@
   text-transform: capitalize;
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 }
 
 .projects-head h2 > span{
@@ -244,4 +245,11 @@
   width: 100%;
   height: 1px;
   flex: 1;
+}
+
+.cards{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2.5rem;
 }

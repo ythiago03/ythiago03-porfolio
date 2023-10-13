@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-scroll';
 
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
@@ -11,6 +11,8 @@ import instagramIcon from './assets/instagram-icon.svg';
 import linkedinIcon from './assets/linkedin-icon.svg';
 import brainIcon from './assets/brain-icon.svg';
 import webDevIcon from './assets/web-dev-icon.svg';
+import IconButton from './Components/IconButton/IconButton';
+import CardProject from './Components/CardProject/CardProject';
 
 function App() {
   const motionTitle = 'Hello, I am'.split('');
@@ -20,7 +22,7 @@ function App() {
   return (
     <>
       
-      <header className="app-header">
+      <header id="home" className="app-header">
         <motion.div
           variants={{
             hidden: { opacity: 0, x: -300 },
@@ -78,14 +80,17 @@ function App() {
             <button className="header-title_btn">Download cv</button>
           </div>
           
-          <div className="scrollDown">
+          
+          <Link className="scrollDown" to="about" spy={true} smooth={true} offset={50} duration={500}>
             <span>Scroll Down</span>
             <span></span>
-          </div>
+          </Link>
+          
         </div>
       </header>
       <main className="app-main">
-        <section className="about">
+
+        <section id="about" className="about">
           <div className="about-head">
             <h2>About<span>.</span></h2>
             <span></span>
@@ -93,13 +98,14 @@ function App() {
           <div className="about-wrapper">
             <section className="about-left">
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui ipsam maiores tempore architecto, quos fugiat in itaque, magni vero officia rerum voluptate. Praesentium dolor earum ipsam officia dicta? Ipsam, animi.
+              Hello, my name is Thiago Fidêncio and I&#39;m a front-end developer.
+              Since I was a child, I&#39;ve always been interested in games and technology, I&#39;ve always liked creating something from scratch and understanding how things work. I believe that creating logical and creative solutions is one of the factors that most attracts me to studying and working with programming.
               </p>
               <p>
-                  Repellendus eius numquam dicta fugit sequi sint, tenetur nobis fugiat, magni ratione, dolorem tempore. Commodi vitae odio assumenda maiores, ullam sit rerum quasi blanditiis quod consequatur quidem doloremque cumque quam.
+                  I&#39;m currently learning
               </p>
               <p>
-                  Facere eius accusantium illum ducimus tempora iste sunt corrupti repellat quam, incidunt dolorum neque vero vitae dolore voluptatum rerum consectetur veritatis quasi qui dolor reiciendis harum ad suscipit. Nihil, numquam.
+                I&#39;m passionate about programming, animes, games and pixel art
               </p>
               <p>
                   Impedit rerum natus nihil perspiciatis, aliquam dolor harum at voluptas quasi doloremque accusantium provident consectetur atque. Recusandae accusantium, quas possimus exercitationem mollitia iste, architecto consectetur unde magni sed dolorem. Excepturi!
@@ -109,19 +115,19 @@ function App() {
                 <span>My links {'->'}</span>
                 <ul>
                   <li>
-                    <a href="https://www.linkedin.com/in/ythiago03/" target="_blank" rel="noreferrer">
-                      <img src={linkedinIcon} alt="Link com a logo do Linkedin" />
-                    </a>
+                    <IconButton text="Linkedin" href="https://www.linkedin.com/in/ythiago03/">
+                      <img src={linkedinIcon} alt="Link com a logo do Linkedin" />      
+                    </IconButton>
                   </li>
                   <li>
-                    <a href="https://github.com/ythiago03" target="_blank" rel="noreferrer">
-                      <img src={githubIcon} alt="Link com a logo do Github" />
-                    </a>
+                    <IconButton text="Github" href="https://github.com/ythiago03">
+                      <img src={githubIcon} alt="Link com a logo do Github" />      
+                    </IconButton>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/ythiago03/" target="_blank" rel="noreferrer">
-                      <img src={instagramIcon} alt="Link com a logo do Instagram" />
-                    </a>
+                    <IconButton text="Instagram" href="https://www.instagram.com/ythiago03/">
+                      <img src={instagramIcon} alt="Link com a logo do Instagram" />    
+                    </IconButton>
                   </li>
                 </ul>
               </div>
@@ -150,18 +156,55 @@ function App() {
           </div>
           
         </section>
-        <section className="projects">
+
+        <section id="projects" className="projects">
           <div className="projects-head">
             <span></span>
             <h2>Projects<span>.</span></h2>
           </div>
+          <div className="cards">
+            <CardProject 
+              cardCover="../../../public/Purpleframe.jpg" 
+              name="Purpleframe"
+              tecs={['React','Javascrit','HTML', 'CSS', 'Firebase']}
+              repo="https://github.com/ythiago03/purpleframe"
+              demo="https://purpleframe.vercel.app/login"
+              desc="PurpleFrame is a photo and video sharing social networking service owned by American company Meta Platforms."
+            />
+            <CardProject 
+              cardCover="../../../public/Aluraflix.jpg" 
+              name="Aluraflix"
+              tecs={['Javascrit','HTML', 'CSS']}
+              repo="https://github.com/ythiago03/aluraImersao/tree/main/aula4-5"
+              demo="https://ythiagoalurafilx.netlify.app/"
+              desc="Aluraflix is a movie and anime app made with immersion dev in which you can add new movies/animes or remove them."
+            />
+            <CardProject 
+              cardCover="../../../public/Homzy.jpg" 
+              name="Homzy"
+              tecs={['React','Javascrit','HTML', 'CSS']}
+              repo="https://github.com/ythiago03/Homzy-Landingpage"
+              demo="https://homzy.vercel.app/"
+              desc="Homzy is a page for purchasing high-quality and super modernized properties."
+            />
+            <CardProject 
+              cardCover="../../../public/AtomBank.jpg" 
+              name="AtomBank"
+              tecs={['React','Javascrit','HTML', 'CSS']}
+              repo="https://github.com/ythiago03/AtomBank"
+              demo="https://atom-bank.vercel.app/"
+              desc="AtomBank is a banking app where you have everything in the palm of your hand."
+            />
+          </div>
         </section>  
-        <section className="projects">
+
+        <section id="contact" className="projects">
           <div className="projects-head">
             <span></span>
             <h2>Contact<span>.</span></h2>
             <span></span>
           </div>
+
         </section>         
       </main>
       
