@@ -253,3 +253,94 @@
   flex-wrap: wrap;
   gap: 2.5rem;
 }
+
+/* ========= CONTACT ========== */
+
+.contact{
+  min-height: calc(100vh - 200px);
+  padding-top: 8rem;
+}
+
+.contact-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.contact-head h2{
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.contact-head h2 > span{
+  color: var(--purple);
+  font-size: 6rem;
+}
+
+.contact-head > span{
+  display: block;
+  background-color: var(--purple);
+  width: 100%;
+  height: 1px;
+  flex: 1;
+}
+
+.contact-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-wrapper > p{
+  color: var(--lightPurple);
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.contact-wrapper p > a{
+  margin: 0.3rem;
+}
+
+.contact-wrapper > a{
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 900;
+  gap: .5rem;
+  cursor: pointer;  
+}
+
+/* ==== FOOTER ====*/
+
+.app-footer{
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-footer > span{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--lightPurple);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-footer a{
+  color: var(--white);
+}
+
+.app-footer a span{
+  color: var(--purple);
+  font-size: 1.75rem;
+}

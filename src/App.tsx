@@ -10,7 +10,10 @@ import githubIcon from './assets/github-icon.svg';
 import instagramIcon from './assets/instagram-icon.svg';
 import linkedinIcon from './assets/linkedin-icon.svg';
 import brainIcon from './assets/brain-icon.svg';
+import heartIcon from './assets/heart-icon.svg';
+import Cv from '../public/Thiago Fidêncio Cv.pdf';
 import webDevIcon from './assets/web-dev-icon.svg';
+import emailIcon from './assets/email-icon.svg';
 import IconButton from './Components/IconButton/IconButton';
 import CardProject from './Components/CardProject/CardProject';
 
@@ -19,6 +22,7 @@ function App() {
   const motionTitle2 = 'thiago'.split('');
   const useAtWork = ['JavaScript','TypeScript','React','HTML','CSS','Azure','NodeJS','Git','Github','Firebase'];
   const learningProcess = ['Tailwind','NextJS','MySQL','Figma','Jest'];
+
   return (
     <>
       
@@ -77,7 +81,7 @@ function App() {
                 <span className="text-hidden">Front end developer</span>
               </h2> */}
             </motion.div>
-            <button className="header-title_btn">Download cv</button>
+            <a className="header-title_btn" href={Cv} download={Cv} >Download cv</a>
           </div>
           
           
@@ -88,6 +92,7 @@ function App() {
           
         </div>
       </header>
+
       <main className="app-main">
 
         <section id="about" className="about">
@@ -198,16 +203,34 @@ function App() {
           </div>
         </section>  
 
-        <section id="contact" className="projects">
-          <div className="projects-head">
+        <section id="contact" className="contact">
+          <div className="contact-head">
             <span></span>
             <h2>Contact<span>.</span></h2>
             <span></span>
           </div>
+          <div className="contact-wrapper">
+            <p>
+              Send me a email or chat me on 
+              <a href="https://www.linkedin.com/in/ythiago03/" className="highlighted-white" target="_blank" rel="noreferrer" >
+                Linkedin
+              </a> 
+               or 
+              <a href="https://www.instagram.com/ythiago03/" className="highlighted-white" target="_blank" rel="noreferrer" >
+                Instagram
+              </a>
+            </p>
+            <a  href="mailto:ythiagohcfidencio@gmail.com" className="highlighted-white" target="_blank" rel="noreferrer">
+              <img src={emailIcon} alt="" />ythiagohcfidencio@gmail.com
+            </a>
+          </div>    
+        </section>      
 
-        </section>         
       </main>
-      
+
+      <footer className="app-footer">
+        <span>Made with <img src={heartIcon} alt="" /> by <a href="https://github.com/ythiago03"target="_blank" rel="noreferrer" >Thiago<span>.</span></a></span>
+      </footer>
     </>
   );
 }
