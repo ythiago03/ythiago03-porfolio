@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import githubIcon from '../../assets/github-icon.svg';
 import logoutIcon from '../../assets/logout-icon.svg';
 
@@ -19,14 +19,15 @@ const CardProject = (props: Props) => {
 
   return (
     <div className="card" >
-      
       <a className="cardImage" href={props.demo} target="_blank" rel="noreferrer">
-        <img src={props.cardCover} alt="" />
+        <img src={props.cardCover} alt="Imagem do Projeto" />
       </a>
 
       <div className="card-head">
         <h3 className="highlighted-white">{props.name}</h3>
-        <span></span>
+
+        <span></span>{/*Line*/}
+
         <a href={props.repo} target="_blank" rel="noreferrer" >
           <img src={githubIcon} alt="Link com a logo do Github" />
         </a>
@@ -34,9 +35,12 @@ const CardProject = (props: Props) => {
           <img src={logoutIcon} alt="Link com a logo do Github" />
         </a>
       </div>
+
       <div className="desc">
         <span>{props.tecs.join(' - ')}</span>
-        <p>{toggle ? props.desc : props.desc.slice(0, 50)+ '...'}
+
+        <p>
+          {toggle ? props.desc : props.desc.slice(0, 50) + '...'}
           <button onClick={() => setToggle(!toggle)} >
             {toggle ? 'Show less <' : 'See more >'}
           </button>

@@ -2,28 +2,35 @@ import { useState, useRef  } from 'react';
 
 import './IconButton.css';
 
-export default function IconButton({ children, text, href, ...props }) {
-  const [hovered, setHovered] = useState(false);
-  const ref = useRef(null);
+interface Props {
+  children: JSX.Element,
+  text: string,
+  href: string,
+}
+
+const IconButton = ({ children, text, href, ...props }: Props) => {
+  const [onHover, setOnHover] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
 
   return (
     <button
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setOnHover(true)}
+      onMouseLeave={() => setOnHover(false)}
       className="iconButton"
       {...props}
     >
       <a href={href} target="_blank" rel="noreferrer">
         {children}
         <div
-          style={{ width: hovered ? ref.current?.offsetWidth || 0 : 0 }}
+          style={{ width: onHover ? ref.current?.offsetWidth  || 0 : 0 }}
           className="iconText"
         >
-          <span  ref={ref} >
+          <span ref={ref} >
             {text}
           </span>
         </div>
       </a>
     </button>
   );
-}
+};
+export default IconButton;

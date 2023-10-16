@@ -1,56 +1,59 @@
-
+/* UTILS */
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
-import './App.css';
+/* COMPONENTS */
 import Navbar from './Components/Navbar/Navbar';
 import Sidebar from './Components/Sidebar/Sidebar';
 import AnimatedText from './Components/AnimatedText/AnimatedText';
+import IconButton from './Components/IconButton/IconButton';
+import CardProject from './Components/CardProject/CardProject';
+
+/* Styles and Icons */
+import './App.css';
+
+import Cv from '../public/Thiago Fidêncio Cv.pdf';
+
 import githubIcon from './assets/github-icon.svg';
 import instagramIcon from './assets/instagram-icon.svg';
 import linkedinIcon from './assets/linkedin-icon.svg';
 import brainIcon from './assets/brain-icon.svg';
 import heartIcon from './assets/heart-icon.svg';
-import Cv from '../public/Thiago Fidêncio Cv.pdf';
+import arrowIcon from './assets/arrow-icon.svg';
 import webDevIcon from './assets/web-dev-icon.svg';
 import emailIcon from './assets/email-icon.svg';
-import IconButton from './Components/IconButton/IconButton';
-import CardProject from './Components/CardProject/CardProject';
 
-function App() {
+
+const App = () => {
   const motionTitle = 'Hello, I am'.split('');
   const motionTitle2 = 'thiago'.split('');
-  const useAtWork = ['JavaScript','TypeScript','React','HTML','CSS','Azure','NodeJS','Git','Github','Firebase'];
-  const learningProcess = ['Tailwind','NextJS','MySQL','Figma','Jest'];
+
+  const useAtWork = [
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'HTML',
+    'CSS',
+    'Azure',
+    'NodeJS',
+    'Git',
+    'Github',
+    'Firebase'
+  ];
+  const learningProcess = [
+    'Tailwind',
+    'NextJS',
+    'MySQL',
+    'Figma',
+    'Jest'
+  ];
 
   return (
     <>
       
       <header id="home" className="app-header">
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, x: -300 },
-            visible: { opacity: 1, x: 0 }
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{duration: 0.6, delay: 0.25}}
-        >
-          <Navbar/>
-        </motion.div>
-        
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: -300 },
-            visible: { opacity: 1, y: -125}
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{duration: 0.6, delay: 0.25}}
-        >
-          <Sidebar/>
-        </motion.div>
-        
+        <Navbar/>
+        <Sidebar/>
         <div className="header-wrapper">
           
           <div className="header-title">
@@ -103,17 +106,16 @@ function App() {
           <div className="about-wrapper">
             <section className="about-left">
               <p>
-              Hello, my name is Thiago Fidêncio and I&#39;m a front-end developer.
-              Since I was a child, I&#39;ve always been interested in games and technology, I&#39;ve always liked creating something from scratch and understanding how things work. I believe that creating logical and creative solutions is one of the factors that most attracts me to studying and working with programming.
+                Hello, I&#39;m Thiago Fidêncio, a front-end developer residing in the country of Brazil. Since I was a child, I&#39;ve always been interested in games and technology. I&#39;ve always liked creating something from scratch and understanding how things work.
               </p>
               <p>
-                  I&#39;m currently learning
+                I believe that creating logical and creative solutions is one of the factors that most attracts me to embark on a journey into the world of coding and software development.
               </p>
               <p>
-                I&#39;m passionate about programming, animes, games and pixel art
+                My days are filled with lines of code, where I&#39;m constantly exploring new ways to solve problems and create innovative solutions. I find immense satisfaction in crafting software that not only functions flawlessly but also makes a positive impact on people&#39;s lives.
               </p>
               <p>
-                  Impedit rerum natus nihil perspiciatis, aliquam dolor harum at voluptas quasi doloremque accusantium provident consectetur atque. Recusandae accusantium, quas possimus exercitationem mollitia iste, architecto consectetur unde magni sed dolorem. Excepturi!
+                As I continue to grow as a software developer, I am excited to learn, adapt, and contribute to the ever-evolving tech landscape. Feel free to connect with me, whether it&#39;s to discuss the latest anime series, share programming insights, or engage in epic gaming quests.
               </p>
 
               <div className="about-links">
@@ -230,9 +232,14 @@ function App() {
 
       <footer className="app-footer">
         <span>Made with <img src={heartIcon} alt="" /> by <a href="https://github.com/ythiago03"target="_blank" rel="noreferrer" >Thiago<span>.</span></a></span>
+        <span>
+          <Link className="highlighted-white" to="home" spy={true} smooth={true} offset={-35} duration={500}>
+            <img src={arrowIcon} alt="Ícone de seta para cima indicando ir para o topo do site"/>
+          </Link>
+        </span>
       </footer>
     </>
   );
-}
+};
 
 export default App;

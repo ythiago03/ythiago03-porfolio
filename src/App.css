@@ -324,16 +324,19 @@
   height: 200px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.app-footer > span{
+.app-footer > span:first-child{
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--lightPurple);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+ 
 }
 
 .app-footer a{
@@ -343,4 +346,14 @@
 .app-footer a span{
   color: var(--purple);
   font-size: 1.75rem;
+}
+
+.app-footer > span:last-child{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  cursor: pointer;
 }
