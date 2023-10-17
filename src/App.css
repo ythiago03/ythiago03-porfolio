@@ -30,10 +30,6 @@
   display: inline-block;
 }
 
-.text-hidden{
-  display: none;
-}
-
 .header-title_desc{
   text-transform: uppercase;
   color: var(--lightPurple);
@@ -336,6 +332,7 @@
   gap: 0.5rem;
   flex: 1;
   justify-content: center;
+  min-width: 300px;
  
 }
 
@@ -356,4 +353,74 @@
   height: 50px;
   margin-right: 1rem;
   cursor: pointer;
+}
+
+/* MEDIAS  */
+
+@media screen and (max-width: 850px){
+  /* GENERAL */
+  .app-main{
+    padding: 0 1.5rem;
+  }
+
+  .about-head, .projects-head, .contact-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-head h2, .projects-head h2, .contact-head h2{
+    font-size: 3rem;
+    font-weight: 900;
+    margin-left: 0rem;
+  }
+  
+  .about-head h2 > span, .projects-head h2 > span, .contact-head h2 > span{
+    color: var(--purple);
+    font-size: 5rem;
+  }
+  
+  .about-head > span, .projects-head > span, .contact-head > span{
+    display: none;
+  }
+  /* HEADER */
+
+  /* ABOUT */
+  .about-links{
+    flex-direction: column;
+  }
+
+  .about-right{
+    margin-top: 2rem;
+    padding-left: 0;
+  }
+  
+  .skills{
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  /* CONTACT */
+  .contact-wrapper > a{
+      font-size: 1rem;
+    }
+  /* FOOTER */
+  .app-footer{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-footer > span:first-child{
+    font-size: 1.25rem;
+    flex: auto;
+  }
+
+  .app-footer > span:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+    cursor: pointer;
+  }
 }

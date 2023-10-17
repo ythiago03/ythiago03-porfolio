@@ -1,6 +1,7 @@
 .card{
   width: 100%;
   max-width: 349px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -72,4 +73,16 @@
   font-weight: 600;
   margin-left: 0.5rem;
   cursor: pointer;
+}
+
+/* MEDIAS  */
+
+@media screen and (max-width: 670px){
+  .cardImage img{
+    top: 90px;
+  }
+  
+  .cardImage img:hover{
+    top: 80px;
+  }
 }

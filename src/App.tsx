@@ -25,9 +25,12 @@ import emailIcon from './assets/email-icon.svg';
 
 
 const App = () => {
-  const motionTitle = 'Hello, I am'.split('');
-  const motionTitle2 = 'thiago'.split('');
 
+  const textToAnimate = [ 
+    'Hello, I am'.split(''), 
+    'thiago'.split(''), 
+  ];
+  
   const useAtWork = [
     'JavaScript',
     'TypeScript',
@@ -68,21 +71,19 @@ const App = () => {
             >
                
               {
-                motionTitle.map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>)
+                textToAnimate[0].map(
+                  (letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+                )
               }
               
-                
-            
-              <div className="header-title_desc">
-                <p>A <span className="highlighted-white">front-end</span> developer fascinating with <span className="highlighted-white" >modern</span> styles</p>
-              </div>
+              <p className="header-title_desc">
+                A <span className="highlighted-white">front-end</span> developer fascinating with <span className="highlighted-white" >modern</span> styles
+              </p>
+             
               {
-                motionTitle2.map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>)
+                textToAnimate[1].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>)
               }
-              {/* <h2>
-                <span>Thiago</span>
-                <span className="text-hidden">Front end developer</span>
-              </h2> */}
+              
             </motion.div>
             <a className="header-title_btn" href={Cv} download={Cv} >Download cv</a>
           </div>
