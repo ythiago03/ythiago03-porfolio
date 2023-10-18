@@ -383,9 +383,29 @@
   .about-head > span, .projects-head > span, .contact-head > span{
     display: none;
   }
-  /* HEADER */
+  /*=======  HEADER ======= */  
+  .header-wrapper{
+    width: 100%;
+    min-height: 84vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  /* ABOUT */
+  .header-title_btn{
+    font-size: 1.25rem;
+   
+    transform: rotate(-5deg);
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+  }
+  
+  .scrollDown{
+    display: none;
+  }
+  
+  /* ======= ABOUT ======= */
   .about-links{
     flex-direction: column;
   }
@@ -399,11 +419,15 @@
     justify-content: center;
     margin-bottom: 4rem;
   }
-  /* CONTACT */
+  /* ======= CONTACT ======= */
+
   .contact-wrapper > a{
       font-size: 1rem;
     }
-  /* FOOTER */
+
+
+  /* ======= FOOTER ======= */
+
   .app-footer{
     align-items: center;
     justify-content: center;
