@@ -1,7 +1,7 @@
 /* UTILS */
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-
+import { useEffect, useState } from 'react'; 
 /* Style and Icons */
 import './Navbar.css';
 
@@ -10,6 +10,21 @@ import icon from '../../assets/T-icon.svg';
 
 const Navbar = () => {
 
+  const getCurrentDimension = () => window.innerWidth;
+
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+  const [toggle, setToggle] =useState(false);
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension());
+    };
+    window.addEventListener('resize', updateDimension);
+    
+    return(() => {
+      window.removeEventListener('resize', updateDimension);
+    });
+  }, [screenSize]);
   
   return (
     
@@ -24,7 +39,9 @@ const Navbar = () => {
       className="navbar"
     >
       
-      <ul>
+      <ul style={{
+        right: toggle ? '0' : '-300px'
+      }} >
 
         <li>
           <Link className="highlighted-white" to="about" spy={true} smooth={true} offset={50} duration={500}>
@@ -43,10 +60,12 @@ const Navbar = () => {
             Contact
           </Link>
         </li>
-
+        
       </ul>
-
-      <div className="icon">
+      {
+        screenSize <= 670 && <img className="icon__mobile" src={icon} alt="Logo em forma de T"/>
+      }
+      <div onClick={() => setToggle(!toggle)} className="icon">
         <img src={icon} alt="Logo em forma de T" />
       </div>
 
