@@ -22,14 +22,6 @@
   text-align: center;
 }
 
-.header-title h1,h2{
-  color: var(--white);
-  font-weight: 900;
-  font-size: 8rem;
-  text-transform: uppercase;
-  display: inline-block;
-}
-
 .header-title_desc{
   text-transform: uppercase;
   color: var(--lightPurple);
@@ -160,6 +152,7 @@
   font-size: 1.5rem;
   margin-top: 2rem;
   color: var(--purple);
+  margin-bottom: 2rem;
 }
 
 .about-links ul{
@@ -180,6 +173,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-width: 240px;
 }
 
 .skills-wrapper > div:first-child{
@@ -357,6 +351,18 @@
 
 /* MEDIAS  */
 
+@media screen and (max-width: 970px) {
+  .header-wrapper{
+    width: 100%;
+    min-height: 84vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
 @media screen and (max-width: 850px){
   /* GENERAL */
   .app-main{
@@ -383,9 +389,28 @@
   .about-head > span, .projects-head > span, .contact-head > span{
     display: none;
   }
-  /* HEADER */
+  /*=======  HEADER ======= */  
+  .header-wrapper{
+    width: 100%;
+    padding: 1rem;
+  }
 
-  /* ABOUT */
+  .header-title_desc{
+    padding: .6rem;
+    line-height: 1.5rem;
+    letter-spacing: .2rem;
+    font-size: .8rem;
+  }
+
+  .header-title_btn{
+    font-size: 1.25rem;
+  }
+  
+  .scrollDown{
+    display: none;
+  }
+  
+  /* ======= ABOUT ======= */
   .about-links{
     flex-direction: column;
   }
@@ -399,11 +424,14 @@
     justify-content: center;
     margin-bottom: 4rem;
   }
-  /* CONTACT */
+  /* ======= CONTACT ======= */
+
   .contact-wrapper > a{
       font-size: 1rem;
     }
-  /* FOOTER */
+
+  /* ======= FOOTER ======= */
+
   .app-footer{
     align-items: center;
     justify-content: center;
