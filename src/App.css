@@ -1,7 +1,8 @@
-.header-header{
+.app-header{
   width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .header-wrapper{
@@ -55,6 +56,7 @@
   align-items: center;
   gap: 0.5rem;
   flex-direction: column;
+  margin-top: 4rem;
   margin-bottom: 1rem;
   cursor: pointer;
   color: var(--white);
