@@ -1,0 +1,17 @@
+.motion-h1{
+  color: var(--white);
+  font-weight: 900;
+  font-size: 8rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+@media screen and (max-width: 815px ) {
+  .motion-h1{
+    color: var(--white);
+    font-weight: 900;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+}

@@ -1,6 +1,8 @@
 import { motion, useAnimationControls } from 'framer-motion';
 import { useState } from 'react';
 
+import './AnimatedText.css';
+
 interface Props {
   children: string,
 }
@@ -24,6 +26,7 @@ const AnimatedText = ({children}: Props) => {
   
   return (
     <motion.h1
+      className="motion-h1"
       animate={controls}
       onMouseOver={() => {if(!isPlaying)textAnimation();}}
       onAnimationComplete={() => setIsPlaying(false)}
