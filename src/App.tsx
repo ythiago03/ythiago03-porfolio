@@ -9,11 +9,11 @@ import AnimatedText from './Components/AnimatedText/AnimatedText';
 import IconButton from './Components/IconButton/IconButton';
 import CardProject from './Components/CardProject/CardProject';
 
-/* Styles and Icons */
+/* Styles and Images */
 import './App.css';
 
 import Cv from '../public/Thiago Fidêncio Cv.pdf';
-
+/* Icons */
 import githubIcon from './assets/github-icon.svg';
 import instagramIcon from './assets/instagram-icon.svg';
 import linkedinIcon from './assets/linkedin-icon.svg';
@@ -22,7 +22,11 @@ import heartIcon from './assets/heart-icon.svg';
 import arrowIcon from './assets/arrow-icon.svg';
 import webDevIcon from './assets/web-dev-icon.svg';
 import emailIcon from './assets/email-icon.svg';
-
+/* Images */
+import purpleframeImg from '../public/Purpleframe.jpg';
+import aluraFlixImg from '../public/Aluraflix.jpg';
+import atomBankImg from '../public/AtomBank.jpg';
+import homzyImg from '../public/Homzy.jpg';
 
 const App = () => {
 
@@ -172,7 +176,7 @@ const App = () => {
           </div>
           <div className="cards">
             <CardProject 
-              cardCover="../../../public/Purpleframe.jpg" 
+              cardCover={purpleframeImg} 
               name="Purpleframe"
               tecs={['React','Javascrit','HTML', 'CSS', 'Firebase']}
               repo="https://github.com/ythiago03/purpleframe"
@@ -180,7 +184,7 @@ const App = () => {
               desc="PurpleFrame is a photo and video sharing social networking service owned by American company Meta Platforms."
             />
             <CardProject 
-              cardCover="../../../public/Aluraflix.jpg" 
+              cardCover={aluraFlixImg}
               name="Aluraflix"
               tecs={['Javascrit','HTML', 'CSS']}
               repo="https://github.com/ythiago03/aluraImersao/tree/main/aula4-5"
@@ -188,7 +192,7 @@ const App = () => {
               desc="Aluraflix is a movie and anime app made with immersion dev in which you can add new movies/animes or remove them."
             />
             <CardProject 
-              cardCover="../../../public/Homzy.jpg" 
+              cardCover={homzyImg}
               name="Homzy"
               tecs={['React','Javascrit','HTML', 'CSS']}
               repo="https://github.com/ythiago03/Homzy-Landingpage"
@@ -196,7 +200,7 @@ const App = () => {
               desc="Homzy is a page for purchasing high-quality and super modernized properties."
             />
             <CardProject 
-              cardCover="../../../public/AtomBank.jpg" 
+              cardCover={atomBankImg} 
               name="AtomBank"
               tecs={['React','Javascrit','HTML', 'CSS']}
               repo="https://github.com/ythiago03/AtomBank"
