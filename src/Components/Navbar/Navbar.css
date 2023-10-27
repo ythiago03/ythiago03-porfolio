@@ -25,11 +25,74 @@
   display: grid;
   place-items: center;
   border-left: 1px solid var(--lightPurple);
-  cursor: pointer;
 }
 
 .icon__mobile{
   margin-left: 1.5rem;
+}
+
+.menu-hamburguer{
+  display: block;
+  background-color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-hamburguer::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  background-color: var(--black);
+  height: 5px;
+  width: 25px;
+  border-radius: 10px;
+  transition: 300ms ease-out;
+}
+
+.menu-hamburguer::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 29px;
+  left: 7px;
+  background-color: var(--black);
+  height: 5px;
+  width: 35px;
+  border-radius: 10px;
+  transition: 300ms ease-out;
+}
+
+.close::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 24px;
+  left: 8px;
+  background-color: var(--black);
+  height: 5px;
+  width: 35px;
+  border-radius: 10px;
+  transform: rotate(40deg);
+  transition: 400ms ease-out;
+}
+
+.close::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 24px;
+  left: 8px;
+  background-color: var(--black);
+  height: 5px;
+  width: 35px;
+  border-radius: 10px;
+  transform: rotate(-40deg);
+  transition: 500ms ease-out;
 }
 
 @media screen and (max-width: 670px) {

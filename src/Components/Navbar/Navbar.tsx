@@ -41,22 +41,23 @@ const Navbar = () => {
       
       <ul style={{
         right: toggle ? '0' : '-300px'
-      }} >
+      }} 
+      >
 
         <li>
-          <Link className="highlighted-white" to="about" spy={true} smooth={true} offset={50} duration={500}>
+          <Link onClick={() => setToggle(!toggle)} className="highlighted-white" to="about" spy={true} smooth={true} offset={50} duration={500}>
             About
           </Link>
         </li>
 
         <li>
-          <Link className="highlighted-white" to="projects" spy={true} smooth={true} offset={50} duration={500}>
+          <Link onClick={() => setToggle(!toggle)} className="highlighted-white" to="projects" spy={true} smooth={true} offset={50} duration={500}>
             Projects
           </Link>
         </li>
 
         <li>
-          <Link className="highlighted-white" to="contact" spy={true} smooth={true} offset={50} duration={500}>
+          <Link onClick={() => setToggle(!toggle)} className="highlighted-white" to="contact" spy={true} smooth={true} offset={50} duration={500}>
             Contact
           </Link>
         </li>
@@ -66,7 +67,11 @@ const Navbar = () => {
         screenSize <= 670 && <img className="icon__mobile" src={icon} alt="Logo em forma de T"/>
       }
       <div onClick={() => setToggle(!toggle)} className="icon">
-        <img src={icon} alt="Logo em forma de T" />
+        {
+          screenSize >= 671 
+            ? <img src={icon} alt="Logo em forma de T"/>
+            : <span className={`${ toggle && 'close' } menu-hamburguer`} ></span>
+        }
       </div>
 
     </motion.nav>
