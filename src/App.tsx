@@ -14,7 +14,7 @@ import './App.css';
 
 import Cv from '../public/Thiago Fidêncio.pdf';
 /* Icons */
-import githubIcon from './assets/github-icon.svg';
+import github2Icon from './assets/github2-icon.svg';
 import instagramIcon from './assets/instagram-icon.svg';
 import linkedinIcon from './assets/linkedin-icon.svg';
 import brainIcon from './assets/brain-icon.svg';
@@ -133,7 +133,7 @@ const App = () => {
                   </li>
                   <li>
                     <IconButton text="Github" href="https://github.com/ythiago03">
-                      <img src={githubIcon} alt="Link com a logo do Github" />      
+                      <img src={github2Icon} alt="Link com a logo do Github" />      
                     </IconButton>
                   </li>
                   <li>
