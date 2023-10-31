@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import githubIcon from '../../assets/github-icon.svg';
 import logoutIcon from '../../assets/logout-icon.svg';
 
 import './CardProject.css';
+import { AppContext } from '../../App';
 
 type Props = {
   cardCover: string,
@@ -15,6 +16,7 @@ type Props = {
 
 const CardProject = (props: Props) => {
 
+  const {languageToggle} = useContext(AppContext);
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -42,7 +44,7 @@ const CardProject = (props: Props) => {
         <p>
           {toggle ? props.desc : props.desc.slice(0, 50) + '...'}
           <button onClick={() => setToggle(!toggle)} >
-            {toggle ? 'Show less <' : 'See more >'}
+            {toggle ? languageToggle ? 'Mostrar Menos <' : 'Show less <' : languageToggle ? 'Mostrar Mais >' : 'See More >' }
           </button>
         </p>
       </div>
