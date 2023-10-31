@@ -1,7 +1,7 @@
 /* UTILS */
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { useState, createContext } from 'react';
+import { useState, createContext, SetStateAction, Dispatch } from 'react';
 
 /* COMPONENTS */
 import Navbar from './Components/Navbar/Navbar';
@@ -28,7 +28,12 @@ import purpleframeImg from '../public/Purpleframe.jpg';
 import aluraFlixImg from '../public/Aluraflix.jpg';
 import homzyImg from '../public/Homzy.jpg';
 
-export const AppContext = createContext({});
+interface UserContextType {
+  languageToggle: boolean | null,
+  setLanguageToggle: Dispatch<SetStateAction<boolean>> 
+}
+
+export const AppContext = createContext<UserContextType>({languageToggle: null, setLanguageToggle: () =>{}});
 
 const App = () => {
 
