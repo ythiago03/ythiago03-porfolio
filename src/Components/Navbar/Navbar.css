@@ -17,6 +17,8 @@
 
 .navbar ul li{
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .icon{
@@ -93,6 +95,14 @@
   border-radius: 10px;
   transform: rotate(-40deg);
   transition: 500ms ease-out;
+}
+
+.language{
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 670px) {

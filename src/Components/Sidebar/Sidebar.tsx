@@ -7,9 +7,13 @@ import './Sidebar.css';
 import githubIcon from '../../assets/github-icon.svg';
 import instagramIcon from '../../assets/instagram-icon.svg';
 import linkedinIcon from '../../assets/linkedin-icon.svg';
+import { useContext } from 'react';
+import { AppContext } from '../../App';
 
 const Sidebar = () => {
   
+  const {languageToggle} = useContext(AppContext);
+
   return (
     <motion.nav 
       variants={{
@@ -22,7 +26,7 @@ const Sidebar = () => {
       className="sidebar">
 
       <div></div>
-      <span>Follow Me</span>
+      <span> {languageToggle ? 'Me siga' : 'Follow Me'} </span>
 
       <ul>
         <li>

@@ -1,11 +1,14 @@
 /* UTILS */
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react'; 
+import { useEffect, useState, useContext } from 'react'; 
+import { AppContext } from '../../App';
 /* Style and Icons */
 import './Navbar.css';
 
 import icon from '../../assets/T-icon.svg';
+import brasilIcon from '../../assets/brasil-icon.svg';
+import euaIcon from '../../assets/eua-icon.svg';
 
 
 const Navbar = () => {
@@ -14,6 +17,7 @@ const Navbar = () => {
 
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
   const [toggle, setToggle] =useState(false);
+  const {languageToggle, setLanguageToggle} = useContext(AppContext);
 
   useEffect(() => {
     const updateDimension = () => {
@@ -46,22 +50,27 @@ const Navbar = () => {
 
         <li>
           <Link onClick={() => setToggle(!toggle)} className="highlighted-white" to="about" spy={true} smooth={true} offset={50} duration={500}>
-            About
+            {languageToggle ? 'Sobre' : 'About'}
           </Link>
         </li>
 
         <li>
           <Link onClick={() => setToggle(!toggle)} className="highlighted-white" to="projects" spy={true} smooth={true} offset={50} duration={500}>
-            Projects
+            {languageToggle ? 'Projetos' : 'Projects'}            
           </Link>
         </li>
 
         <li>
           <Link onClick={() => setToggle(!toggle)} className="highlighted-white" to="contact" spy={true} smooth={true} offset={50} duration={500}>
-            Contact
+            {languageToggle ? 'Contato' : 'Contact'}
           </Link>
         </li>
         
+        <li>
+          <button className="language" onClick={() => setLanguageToggle(!languageToggle)}>
+            {languageToggle ? <img src={brasilIcon} alt="Logo em forma de T"/> : <img src={euaIcon} alt="Logo em forma de T"/> }</button>
+        </li>
+
       </ul>
       {
         screenSize <= 670 && <img className="icon__mobile" src={icon} alt="Logo em forma de T"/>
