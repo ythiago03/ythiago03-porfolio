@@ -224,7 +224,7 @@ const App = () => {
                 tecs={['React','Javascrit','HTML', 'CSS', 'Firebase']}
                 repo="https://github.com/ythiago03/purpleframe"
                 demo="https://purpleframe.vercel.app/login"
-                desc={languageToggle ? 'PurpleFrame é um serviço de rede social de compartilhamento de fotos e vídeos de propriedade.' : 'PurpleFrame is a photo and video sharing social networking service.' }
+                desc={languageToggle ? 'PurpleFrame é um serviço de rede social de compartilhamento de fotos e vídeos.' : 'PurpleFrame is a photo and video sharing social networking service.' }
               />
               <CardProject 
                 cardCover={aluraFlixImg}
@@ -232,7 +232,7 @@ const App = () => {
                 tecs={['Javascrit','HTML', 'CSS']}
                 repo="https://github.com/ythiago03/aluraImersao/tree/main/aula4-5"
                 demo="https://ythiagoalurafilx.netlify.app/"
-                desc={languageToggle ? 'Aluraflix é um aplicativo de filmes e animes feito com imersão no qual você pode adicionar novos filmes/animes ou removê-los.' : 'Aluraflix is a movie and anime app made with immersion dev in which you can add new movies/animes or remove them.' }
+                desc={languageToggle ? 'Aluraflix é um aplicativo de filmes e animes no qual você pode adicionar novos filmes/animes ou removê-los.' : 'Aluraflix is a movie and anime app in which you can add new movies/animes or remove them.' }
               />
               <CardProject 
                 cardCover={homzyImg}
