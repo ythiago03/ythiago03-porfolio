@@ -38,7 +38,23 @@ export const AppContext = createContext<UserContextType>({languageToggle: null, 
 const App = () => {
 
   const [languageToggle, setLanguageToggle] = useState(false);
+  
+  const animatedText = {
+    englishText: 'hello, i am thiago'.split(' '),
+    portugueseText: 'olá, eu sou thiago'.split(' ')
+  };
+  const english = [];
+  const createAnimatedText = () => {
+    
+    animatedText.englishText.forEach(word => {
+      english.push(word.split(''));
+      
+    });
+    console.log(english);
+    
+  };
 
+  createAnimatedText();
   const englishAnimated = [ 
     'Hello, I am'.split(''), 
     'thiago'.split(''), 
@@ -75,7 +91,7 @@ const App = () => {
         <header id="home" className="app-header">
           <Navbar/>
           <Sidebar/>
-          <div className="header-wrapper">
+          <section className="header-wrapper">
           
             <div className="header-title">
               <motion.div
@@ -92,9 +108,21 @@ const App = () => {
                   ? portugueseAnimated[0].map(
                     (letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
                   )
-                  : englishAnimated[0].map(
-                    (letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
-                  )
+                  : <div style={{display: 'flex',flexWrap: 'wrap'}}>
+                    <div>
+                      {english[0].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+                      )}
+                    </div>
+                    <div>
+                      {english[1].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+                      )}
+                    </div>
+                    <div>
+                      {english[2].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+                      )}
+                    </div>
+                    
+                  </div>
                 }
               
                 {languageToggle 
@@ -122,7 +150,7 @@ const App = () => {
               <span></span>
             </Link>
           
-          </div>
+          </section>
         </header>
 
         <main className="app-main">
