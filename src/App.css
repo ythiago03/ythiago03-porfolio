@@ -51,6 +51,13 @@
   transform: rotate(0);
 }
 
+.motion-title_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .scrollDown{
   display: flex;
   align-items: center;

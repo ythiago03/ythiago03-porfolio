@@ -38,32 +38,59 @@ export const AppContext = createContext<UserContextType>({languageToggle: null, 
 const App = () => {
 
   const [languageToggle, setLanguageToggle] = useState(false);
-  
+  const englishText = [];
+  const portugueseText = [];
+
   const animatedText = {
     englishText: 'hello, i am thiago'.split(' '),
     portugueseText: 'olá, eu sou thiago'.split(' ')
   };
-  const english = [];
-  const createAnimatedText = () => {
+  
+  const createAnimatedText = (language: string) => {
     
-    animatedText.englishText.forEach(word => {
-      english.push(word.split(''));
-      
+    animatedText.portugueseText.forEach(word => {
+      portugueseText.push(word.split(''));
     });
-    console.log(english);
+
+    animatedText.englishText.forEach(word => {
+      englishText.push(word.split(''));
+    });
+
+    return(
+      language == 'en' 
+        ? 
+        <div className="motion-title_wrapper">
+          <h1>
+            {englishText[0].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+            )}
+          </h1>
+          <h1>
+            {englishText[1].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+            )}
+          </h1>
+          <h1>
+            {englishText[2].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+            )}
+          </h1>
+        </div> 
+        : 
+        <div className="motion-title_wrapper">
+          <h1>
+            {portugueseText[0].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+            )}
+          </h1>
+          <h1>
+            {portugueseText[1].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+            )}
+          </h1>
+          <h1>
+            {portugueseText[2].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+            )}
+          </h1>
+        </div> 
+    );
     
   };
-
-  createAnimatedText();
-  const englishAnimated = [ 
-    'Hello, I am'.split(''), 
-    'thiago'.split(''), 
-  ];
-  
-  const portugueseAnimated = [ 
-    'Olá, Eu sou'.split(''), 
-    'thiago'.split(''), 
-  ];
 
   const useAtWork = [
     'JavaScript',
@@ -105,24 +132,8 @@ const App = () => {
               >
                
                 {languageToggle 
-                  ? portugueseAnimated[0].map(
-                    (letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
-                  )
-                  : <div style={{display: 'flex',flexWrap: 'wrap'}}>
-                    <div>
-                      {english[0].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
-                      )}
-                    </div>
-                    <div>
-                      {english[1].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
-                      )}
-                    </div>
-                    <div>
-                      {english[2].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
-                      )}
-                    </div>
-                    
-                  </div>
+                  ? createAnimatedText('pt-br')
+                  : createAnimatedText('en')
                 }
               
                 {languageToggle 
@@ -134,9 +145,8 @@ const App = () => {
                   </p>
                 } 
              
-                {
-                  englishAnimated[1].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>)
-                }
+                {englishText[3].map((letter, i) => <AnimatedText key={i}>{letter === ' ' ? '\u00A0' : letter}</AnimatedText>
+                )}
               
               </motion.div>
               <a className="header-title_btn" href={Cv} download={Cv} >
