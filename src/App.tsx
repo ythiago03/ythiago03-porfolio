@@ -1,7 +1,7 @@
 /* UTILS */
-import { motion } from 'framer-motion';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { useState, createContext, SetStateAction, Dispatch } from 'react';
+import { useState, createContext, SetStateAction, Dispatch, useRef, useEffect } from 'react';
 
 /* COMPONENTS */
 import Navbar from './Components/Navbar/Navbar';
@@ -40,6 +40,20 @@ const App = () => {
   const [languageToggle, setLanguageToggle] = useState(false);
   const englishText = [];
   const portugueseText = [];
+  const container = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(container);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    console.log(isInView);
+    if(isInView){
+      controls.start('visible');
+    }else{
+      controls.start('hidden');
+    }
+    
+  },[isInView]);
 
   const animatedText = {
     englishText: 'hello, i am thiago'.split(' '),
@@ -171,35 +185,69 @@ const App = () => {
               <span></span>
             </div>
             <div className="about-wrapper">
-              <section className="about-left">
+              <motion.section ref={container} className="about-left"
+                
+              >
                 {languageToggle 
                   ? <>
-                    <p>
+                    <p ref={ref}> 
                     Olá, eu sou Thiago Fidêncio, um desenvolvedor front-end residente no Brasil. Desde que era criança, sempre me interessei por jogos e tecnologia. Sempre gostei de criar algo do zero e entender como as coisas funcionam.
                     </p>
-                    <p>
+                    <p ref={ref}>
                     Acredito que criar soluções lógicas e criativas é um dos fatores que mais me atraiu a embarcar em uma jornada no mundo da programação e desenvolvimento de software.
                     </p>
-                    <p>
+                    <p ref={ref}>
                     Meus dias são preenchidos com linhas de código, onde estou constantemente explorando novas maneiras de resolver problemas e criar soluções inovadoras. Encontro imensa satisfação em desenvolver software que não apenas funcione perfeitamente, mas também tenha um impacto positivo na vida das pessoas.
                     </p>
-                    <p>
+                    <p ref={ref}>
                     À medida que continuo a crescer como desenvolvedor de software, estou empolgado em aprender, adaptar e contribuir para o cenário tecnológico em constante evolução. Sinta-se à vontade para entrar em contato comigo, seja para discutir as últimas séries de anime, compartilhar insights de programação ou se envolver em épicas jornadas de jogos.
                     </p>
                   </>
                   : <>
-                    <p>
+                    <motion.p ref={ref}
+                      variants={{
+                        hidden: {opacity: 0, y: 75},
+                        visible: {opacity: 1, y: 0}
+                      }}
+                      initial={'hidden'}
+                      animate={controls}
+                      transition={{duration: 0.5, delay: 0.25}}
+                    >
                     Hello, I&#39;m Thiago Fidêncio, a front-end developer residing in the country of Brazil. Since I was a child, I&#39;ve always been interested in games and technology. I&#39;ve always liked creating something from scratch and understanding how things work.
-                    </p>
-                    <p>
+                    </motion.p>
+                    <motion.p ref={ref}
+                      variants={{
+                        hidden: {opacity: 0, y: 75},
+                        visible: {opacity: 1, y: 0}
+                      }}
+                      initial={'hidden'}
+                      animate={controls}
+                      transition={{duration: 0.5, delay: 0.35}}
+                    >
                     I believe that creating logical and creative solutions is one of the factors that most attracts me to embark on a journey into the world of coding and software development.
-                    </p>
-                    <p>
+                    </motion.p>
+                    <motion.p ref={ref}
+                      variants={{
+                        hidden: {opacity: 0, y: 75},
+                        visible: {opacity: 1, y: 0}
+                      }}
+                      initial={'hidden'}
+                      animate={controls}
+                      transition={{duration: 0.5, delay: 0.45}}
+                    > 
                     My days are filled with lines of code, where I&#39;m constantly exploring new ways to solve problems and create innovative solutions. I find immense satisfaction in crafting software that not only functions flawlessly but also makes a positive impact on people&#39;s lives.
-                    </p>
-                    <p>
+                    </motion.p>
+                    <motion.p ref={ref}
+                      variants={{
+                        hidden: {opacity: 0, y: 75},
+                        visible: {opacity: 1, y: 0}
+                      }}
+                      initial={'hidden'}
+                      animate={controls}
+                      transition={{duration: 0.5, delay: 0.55}}
+                    >
                     As I continue to grow as a software developer, I am excited to learn, adapt, and contribute to the ever-evolving tech landscape. Feel free to connect with me, whether it&#39;s to discuss the latest anime series, share programming insights, or engage in epic gaming quests.
-                    </p>
+                    </motion.p>
                   </>
                 }
                 
@@ -224,7 +272,7 @@ const App = () => {
                     </li>
                   </ul>
                 </div>
-              </section>
+              </motion.section>
 
               <section className="about-right">
                 <div className="skills-wrapper">

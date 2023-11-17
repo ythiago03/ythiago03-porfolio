@@ -30,7 +30,7 @@ const AnimatedText = ({children}: Props) => {
       animate={controls}
       onMouseOver={() => {if(!isPlaying)textAnimation();}}
       onAnimationComplete={() => setIsPlaying(false)}
-      style={{color: isPlaying ? 'var(--lightPurple)' : 'var(--white)'}}
+      style={{color: isPlaying ? 'var(--purple)' : 'var(--white)'}}
     >
       {children}
     </motion.span>
