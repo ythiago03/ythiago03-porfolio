@@ -1,9 +1,11 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import githubIcon from '../../assets/github-icon.svg';
 import logoutIcon from '../../assets/logout-icon.svg';
 
+
 import './CardProject.css';
 import { AppContext } from '../../App';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 type Props = {
   cardCover: string,
@@ -18,11 +20,33 @@ const CardProject = (props: Props) => {
 
   const {languageToggle} = useContext(AppContext);
   const [toggle, setToggle] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if(isInView){
+      controls.start('visible');
+      return;
+    }
+    controls.start('hidden');
+  }, [isInView]);
 
   return (
     <div className="card" >
       <a className="cardImage" href={props.demo} target="_blank" rel="noreferrer">
-        <img src={props.cardCover} alt="Imagem do Projeto" />
+        <motion.img 
+          src={props.cardCover} 
+          alt="Imagem do Projeto" 
+          ref={ref}
+          variants={{
+            hidden: {opacity: 0, y: 75, rotate: -5},
+            visible: {opacity: 1, y: 0, rotate: -5}
+          }}
+          initial={'hidden'}
+          animate={controls}
+          transition={{duration: 0.5, delay: 0.25}}
+        />
       </a>
 
       <div className="card-head">

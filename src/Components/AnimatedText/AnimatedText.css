@@ -1,4 +1,4 @@
-.motion-h1{
+.motion-span{
   color: var(--white);
   font-weight: 900;
   font-size: 8rem;
@@ -6,12 +6,12 @@
   display: inline-block;
 }
 
-@media screen and (max-width: 815px ) {
-  .motion-h1{
+@media screen and (max-width: 570px ) {
+  .motion-span{
     color: var(--white);
     font-weight: 900;
     font-size: 3.6rem;
     text-transform: uppercase;
     display: inline-block;
-  }
+  } 
 }

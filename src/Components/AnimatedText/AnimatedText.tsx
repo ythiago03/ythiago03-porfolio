@@ -25,15 +25,15 @@ const AnimatedText = ({children}: Props) => {
   };
   
   return (
-    <motion.h1
-      className="motion-h1"
+    <motion.span
+      className="motion-span"
       animate={controls}
       onMouseOver={() => {if(!isPlaying)textAnimation();}}
       onAnimationComplete={() => setIsPlaying(false)}
-      style={{color: isPlaying ? 'var(--lightPurple)' : 'var(--white)'}}
+      style={{color: isPlaying ? 'var(--purple)' : 'var(--white)'}}
     >
       {children}
-    </motion.h1>
+    </motion.span>
   );
 };
 
