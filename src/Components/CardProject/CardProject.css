@@ -30,7 +30,7 @@
 
 .cardImage img:hover{
   top: 60px;
-  transform: rotate(0deg);
+  transform: rotate(0deg)!important;
 }
 
 .card-head {

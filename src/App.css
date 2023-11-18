@@ -143,7 +143,7 @@
   line-height: 1.5;
 }
 
-.about-left  p:first-child::first-letter{
+.about-left div:first-child  p::first-letter{
   background-color: rgb(50, 50, 50);
   border-radius: 5px;
   color: var(--purple);
@@ -203,7 +203,7 @@
   margin-bottom: 8rem;
 }
 
-.skills span{
+.skills div{
   background-color: var(--purple);
   color: var(--white);
   padding: 0.5rem .8rem;
