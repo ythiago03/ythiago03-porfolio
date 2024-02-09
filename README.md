@@ -1,10 +1,9 @@
-<h4 align="center">🚧  This project is under construction . . .  🚧 </h4>
 
 <h1 align="center"> Portfólio </h1>
 
 <p align="center"> Portfólio pessoal. </p>
 
-!()[]
+![Imagem do Projeto](./public/Portfolio.png)
 
 <p align="center">
     <a href="#sobre">sobre</a> •
