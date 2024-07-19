@@ -12,7 +12,7 @@ import CardProject from './Components/CardProject/CardProject';
 /* Styles and Images */
 import './App.css';
 
-import Cv from '../public/Thiago Fidêncio.pdf';
+import Cv from '../public/Thiago Fidêncio CV (1).pdf';
 /* Icons */
 import github2Icon from './assets/github2-icon.svg';
 import instagramIcon from './assets/instagram-icon.svg';
