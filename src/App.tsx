@@ -24,7 +24,7 @@ import webDevIcon from './assets/web-dev-icon.svg';
 import emailIcon from './assets/email-icon.svg';
 /* Images */
 import purpleframeImg from '../public/Purpleframe.jpg';
-import aluraFlixImg from '../public/Aluraflix.jpg';
+import mangaStoreImg from '../public/MangaStore.png';
 import homzyImg from '../public/Homzy.jpg';
 import Motion from './Components/Motion/Motion';
 
@@ -290,12 +290,12 @@ const App = () => {
               </Motion>
               <Motion>
                 <CardProject 
-                  cardCover={aluraFlixImg}
-                  name="Aluraflix"
-                  tecs={['Javascrit','HTML', 'CSS']}
-                  repo="https://github.com/ythiago03/aluraImersao/tree/main/aula4-5"
-                  demo="https://ythiagoalurafilx.netlify.app/"
-                  desc={languageToggle ? 'Aluraflix é um aplicativo de filmes e animes no qual você pode adicionar novos filmes/animes ou removê-los.' : 'Aluraflix is a movie and anime app in which you can add new movies/animes or remove them.' }
+                  cardCover={mangaStoreImg}
+                  name="MangaStore"
+                  tecs={['Typescript', 'React', 'HTML', 'CSS']}
+                  repo="https://github.com/ythiago03/manga-store"
+                  demo="https://manga-store-ythiago03.vercel.app/"
+                  desc={languageToggle ? 'Criação de um site e-commerce especializado na venda de mangás. A plataforma oferece uma interface amigável e intuitiva, permitindo aos usuários navegar e encontrar seus títulos favoritos com facilidade. ' : 'Development of an e-commerce website specializing in manga sales. The platform offers a user-friendly and intuitive interface, allowing users to easily browse and find their favorite titles.' }
                 />
               </Motion>
               
