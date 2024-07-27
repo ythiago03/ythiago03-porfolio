@@ -96,20 +96,26 @@ const App = () => {
     'JavaScript',
     'TypeScript',
     'React',
+    'Angular',
+    'Java',
     'HTML',
     'CSS',
-    'Azure',
-    'NodeJS',
+    'SCSS',
+    'MySQL',
+    'Bootstrap',
+    'Springboot',
     'Git',
     'Github',
-    'Firebase'
+    'Microservices'
   ];
   const learningProcess = [
     'Tailwind',
     'NextJS',
-    'MySQL',
+    'NodeJS',
     'Figma',
-    'Jest'
+    'Jest',
+    'Azure',
+    'Firebase'
   ];
 
   return (
@@ -130,10 +136,10 @@ const App = () => {
               
                   {languageToggle 
                     ? <p className="header-title_desc">
-                      Um desenvolvedor <span className="highlighted-white">front-end</span>  fascinado por estilos <span className="highlighted-white" >modernos</span> 
+                      Um desenvolvedor <span className="highlighted-white">full stack</span>  fascinado por estilos <span className="highlighted-white" >modernos</span> 
                     </p>
                     : <p className="header-title_desc">
-                      A <span className="highlighted-white">front-end</span> developer fascinating with <span className="highlighted-white" >modern</span> styles
+                      A <span className="highlighted-white">full stack</span> developer fascinating with <span className="highlighted-white" >modern</span> styles
                     </p>
                   } 
              
@@ -170,7 +176,7 @@ const App = () => {
                   ? <>
                     <Motion>
                       <p> 
-                        Olá, eu sou Thiago Fidêncio, um desenvolvedor front-end residente no Brasil. Desde que era criança, sempre me interessei por jogos e tecnologia. Sempre gostei de criar algo do zero e entender como as coisas funcionam.
+                        Olá, eu sou Thiago Fidêncio, um desenvolvedor full stack residente no Brasil. Desde que era criança, sempre me interessei por jogos e tecnologia. Sempre gostei de criar algo do zero e entender como as coisas funcionam.
                       </p>
                     </Motion>
                     
@@ -196,7 +202,7 @@ const App = () => {
                   : <>
                     <Motion>
                       <p>
-                        Hello, I&#39;m Thiago Fidêncio, a front-end developer residing in the country of Brazil. Since I was a child, I&#39;ve always been interested in games and technology. I&#39;ve always liked creating something from scratch and understanding how things work.
+                        Hello, I&#39;m Thiago Fidêncio, a full stack developer residing in the country of Brazil. Since I was a child, I&#39;ve always been interested in games and technology. I&#39;ve always liked creating something from scratch and understanding how things work.
                       </p>
                     </Motion>
                     
