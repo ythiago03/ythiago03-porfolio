@@ -25,7 +25,7 @@ import emailIcon from './assets/email-icon.svg';
 /* Images */
 import purpleframeImg from '../public/Purpleframe.jpg';
 import mangaStoreImg from '../public/MangaStore.png';
-import homzyImg from '../public/Homzy.jpg';
+import Physiosearch from '../public/physiosearch.png';
 import Motion from './Components/Motion/Motion';
 
 interface UserContextType {
@@ -96,16 +96,20 @@ const App = () => {
     'JavaScript',
     'TypeScript',
     'React',
+    'Angular',
     'HTML',
     'CSS',
     'Azure',
     'NodeJS',
     'Git',
     'Github',
-    'Firebase'
+    'Firebase',
+    'Tailwind',
+    'Java',
+    'Spring',
+    'Docker',
   ];
   const learningProcess = [
-    'Tailwind',
     'NextJS',
     'MySQL',
     'Figma',
@@ -301,12 +305,12 @@ const App = () => {
               
               <Motion>
                 <CardProject 
-                  cardCover={homzyImg}
-                  name="Homzy"
-                  tecs={['React','Javascrit','HTML', 'CSS']}
-                  repo="https://github.com/ythiago03/Homzy-Landingpage"
-                  demo="https://homzy.vercel.app/"
-                  desc={languageToggle ? 'Homzy é uma página para aquisição de imóveis de alta qualidade e super modernizados.' : 'Homzy is a page for purchasing high-quality and super modernized properties.'}
+                  cardCover={Physiosearch}
+                  name="Physiosearch"
+                  tecs={['React','Typescript','HTML', 'SCSS']}
+                  repo="https://github.com/ythiago03/physiosearch"
+                  demo="https://github.com/ythiago03/physiosearch"
+                  desc={languageToggle ? 'PhysioSearch é um projeto proposto por um grupo de estudantes de fisioterapia com o objetivo de facilitar o estudo e a visualização do corpo humano. O sistema permite que os estudantes visualizem um esqueleto 2D interativo, onde podem aplicar zoom, manipular a imagem e acessar informações detalhadas de áreas específicas do corpo. Cada parte clicável do esqueleto redireciona os usuários para uma visualização mais detalhada da área, que inclui links para artigos e tratamentos relacionados.' : 'PhysioSearch is a project proposed by a group of physiotherapy students with the goal of facilitating the study and visualization of the human body. The system allows students to view an interactive 2D skeleton, where they can zoom, manipulate the image and access detailed information about specific areas of the body. Each clickable part of the skeleton redirects users to a more detailed view of the area, which includes links to related articles and treatments.'}
                 />
               </Motion>
               
