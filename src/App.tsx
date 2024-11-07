@@ -309,7 +309,7 @@ const App = () => {
                   name="Physiosearch"
                   tecs={['React','Typescript','HTML', 'SCSS']}
                   repo="https://github.com/ythiago03/physiosearch"
-                  demo="https://github.com/ythiago03/physiosearch"
+                  demo="https://physiosearch.vercel.app/"
                   desc={languageToggle ? 'PhysioSearch é um projeto proposto por um grupo de estudantes de fisioterapia com o objetivo de facilitar o estudo e a visualização do corpo humano. O sistema permite que os estudantes visualizem um esqueleto 2D interativo, onde podem aplicar zoom, manipular a imagem e acessar informações detalhadas de áreas específicas do corpo. Cada parte clicável do esqueleto redireciona os usuários para uma visualização mais detalhada da área, que inclui links para artigos e tratamentos relacionados.' : 'PhysioSearch is a project proposed by a group of physiotherapy students with the goal of facilitating the study and visualization of the human body. The system allows students to view an interactive 2D skeleton, where they can zoom, manipulate the image and access detailed information about specific areas of the body. Each clickable part of the skeleton redirects users to a more detailed view of the area, which includes links to related articles and treatments.'}
                 />
               </Motion>
